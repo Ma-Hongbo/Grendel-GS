@@ -138,6 +138,7 @@ def render_set(model_path, name, iteration, views, gaussians, pipeline, backgrou
                 )
 
             gt_camera.original_image = None
+            print(gt_camera.image_name)
 
         if generated_cnt == args.generate_num:
             break
