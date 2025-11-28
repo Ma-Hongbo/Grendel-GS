@@ -130,15 +130,14 @@ def render_set(model_path, name, iteration, views, gaussians, pipeline, backgrou
             if utils.GLOBAL_RANK == 0:
                 torchvision.utils.save_image(
                     image,
-                    os.path.join(render_path, "{0:05d}".format(actual_idx) + ".png"),
+                    os.path.join(render_path, gt_camera.image_name + ".png"),
                 )
                 torchvision.utils.save_image(
                     gt_image,
-                    os.path.join(gts_path, "{0:05d}".format(actual_idx) + ".png"),
+                    os.path.join(gts_path, gt_camera.image_name + ".png"),
                 )
 
             gt_camera.original_image = None
-            print(gt_camera.image_name)
 
         if generated_cnt == args.generate_num:
             break
