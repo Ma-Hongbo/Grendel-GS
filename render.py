@@ -157,7 +157,8 @@ def render_sets(
 
         bg_color = [1, 1, 1] if dataset.white_background else [0, 0, 0]
         background = torch.tensor(bg_color, dtype=torch.float32, device="cuda")
-        print(scene.getTestCameras())
+        for camera in scene.getTestCameras():
+            print(camera.img_name)
         if not skip_train:
             render_set(
                 dataset.model_path,
