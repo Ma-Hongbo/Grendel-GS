@@ -179,6 +179,7 @@ def render_sets(
                 pipeline,
                 background,
             )
+            print(scene.getTestCameras())
 
 
 if __name__ == "__main__":
